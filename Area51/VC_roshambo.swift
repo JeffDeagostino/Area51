@@ -10,86 +10,125 @@ import UIKit
 
 class VC_roshambo: UIViewController {
     
-    
-    @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var resultImage: UIImageView!
-    
+    var opponentPlay: String?
+    var ourPlay: String?
+    var youWon: Bool?
+    var winner: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    func randomPlay() -> String {
+    func randomPlay() {
         // Generate a random Int32 using arc4Random
         let randomValue = 1 + arc4random() % 3
         
         if(randomValue == 1){
-            return "rock"
+            opponentPlay = "rock"
         } else if (randomValue == 2) {
-            return "paper"
-        } else {return "scissor"}
+            opponentPlay =  "paper"
+        } else {opponentPlay = "scissor"}
+    
+        if(ourPlay == "rock"){
+            if(opponentPlay == "rock"){
+                youWon = false
+                winner = "tie"
+            } else if(opponentPlay == "paper") {
+                youWon = false
+                winner = "paper"
+            } else {
+                youWon = true
+                winner = "rock"
+            }
+        }
+        
+        if(ourPlay == "paper"){
+            if(opponentPlay == "rock"){
+                youWon = true
+                winner = "paper"
+            } else if(opponentPlay == "paper") {
+                youWon = false
+                winner = "tie"
+            } else {
+                youWon = false
+                winner = "scissor"
+            }
+        }
+        
+        if(ourPlay == "scissor"){
+            if(opponentPlay == "rock"){
+                youWon = false
+                winner = "rock"
+            } else if(opponentPlay == "paper") {
+                youWon = true
+                winner = "scissor"
+            } else {
+                youWon = false
+                winner = "tie"
+            }
+        }
+        
+        
+    
     }
     
     @IBAction func rock() {
         
-        let opponent = randomPlay()
+        ourPlay = "rock"
+        self.randomPlay()
         
-        if(opponent == "scissor"){
-            rockWins()
-        } else if(opponent == "paper") {
-            paperWins()
-        } else {
-            tie()
-        }
+        // Use hard coded segue
+        showResults()
+        
     }
     @IBAction func paper() {
         
-        let opponent = randomPlay()
+        ourPlay = "paper"
+        self.randomPlay()
+        // Using SegueStoryBoard1. Created in storyboard by dragging from the button to the view, naming it, and overriding the prepare() funciton to pass the data.
         
-        if(opponent == "scissor"){
-            scissorWins()
-        } else if(opponent == "rock") {
-            paperWins()
-        } else {
-            tie()
-        }
     }
     @IBAction func scissor() {
         
-        let opponent = randomPlay()
+        ourPlay = "scissor"
+        self.randomPlay()
+        //showResults()
         
-        if(opponent == "rock"){
-            rockWins()
-        } else if(opponent == "paper") {
-            scissorWins()
+        //Perform Segue by Identifier
+        performSegue(withIdentifier: "SegueStoryBoard1", sender: self)
+        
+    }
+    // hard coded segue
+    func showResults()
+    {
+        var controller: VC_roshambo_result
+        
+        controller = self.storyboard?.instantiateViewController(withIdentifier: "ID_Roshambo_Result") as! VC_roshambo_result
+        
+        controller.result = winner
+        
+        if(youWon == true){
+            controller.winLose = "You Won!"
         } else {
-            tie()
+            controller.winLose = "You lost!"
         }
-    }
-    func tie()
-    {
-        resultLabel.text = "It's a tie!"
-        self.resultImage.image = UIImage(named: "itsATie")
-    
-    }
-    func rockWins()
-    {
-        resultLabel.text = "Rock crushes scissors!"
-        self.resultImage.image = UIImage(named: "RockCrushesScissors")
         
+        present(controller, animated: true, completion: nil)
+   
     }
-    func paperWins()
-    {
-        resultLabel.text = "Paper covers rock!"
-        self.resultImage.image = UIImage(named: "PaperCoversRock")
+    // prepares data to be sent to storyboard segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-    }
-    func scissorWins()
-    {
-        resultLabel.text = "Scissors cuts paper!"
-        self.resultImage.image = UIImage(named: "ScissorsCutPaper")
+        let controller = segue.destination as! VC_roshambo_result
         
+        controller.result = winner
+        
+        if(youWon == true){
+            controller.winLose = "You Won!"
+        } else {
+            controller.winLose = "You lost!"
+        }
     }
     
 }
