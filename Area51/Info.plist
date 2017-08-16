@@ -36,6 +36,8 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Just testing</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

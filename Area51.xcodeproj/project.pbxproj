@@ -16,6 +16,11 @@
 		6014B5881F3A92EE00AACAEA /* Area51UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6014B5871F3A92EE00AACAEA /* Area51UITests.swift */; };
 		6014B5961F3AA79A00AACAEA /* ViewControllerMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6014B5951F3AA79A00AACAEA /* ViewControllerMain.swift */; };
 		608491821F408FF00082C013 /* VC_roshambo_result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608491811F408FF00082C013 /* VC_roshambo_result.swift */; };
+		608491851F41FDB40082C013 /* VC_TextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608491841F41FDB40082C013 /* VC_TextDelegate.swift */; };
+		608491881F421AFD0082C013 /* RandomColorTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608491871F421AFD0082C013 /* RandomColorTextFieldDelegate.swift */; };
+		6084918A1F42303D0082C013 /* ZipCodeTextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608491891F42303D0082C013 /* ZipCodeTextDelegate.swift */; };
+		6084918C1F4230540082C013 /* CashTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6084918B1F4230540082C013 /* CashTextFieldDelegate.swift */; };
+		6084918E1F427E900082C013 /* VC_Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6084918D1F427E900082C013 /* VC_Meme.swift */; };
 		60FEA2AD1F3D39F100ED4D44 /* VC_roshambo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FEA2AC1F3D39F100ED4D44 /* VC_roshambo.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,11 @@
 		6014B5891F3A92EE00AACAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6014B5951F3AA79A00AACAEA /* ViewControllerMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerMain.swift; sourceTree = "<group>"; };
 		608491811F408FF00082C013 /* VC_roshambo_result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_roshambo_result.swift; sourceTree = "<group>"; };
+		608491841F41FDB40082C013 /* VC_TextDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_TextDelegate.swift; sourceTree = "<group>"; };
+		608491871F421AFD0082C013 /* RandomColorTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColorTextFieldDelegate.swift; sourceTree = "<group>"; };
+		608491891F42303D0082C013 /* ZipCodeTextDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeTextDelegate.swift; sourceTree = "<group>"; };
+		6084918B1F4230540082C013 /* CashTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashTextFieldDelegate.swift; sourceTree = "<group>"; };
+		6084918D1F427E900082C013 /* VC_Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_Meme.swift; sourceTree = "<group>"; };
 		60FEA2AC1F3D39F100ED4D44 /* VC_roshambo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_roshambo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,15 +113,14 @@
 		6014B5661F3A92EE00AACAEA /* Area51 */ = {
 			isa = PBXGroup;
 			children = (
+				608491861F421ACB0082C013 /* Delegates */,
+				608491831F41FD2A0082C013 /* VC */,
 				6014B5671F3A92EE00AACAEA /* AppDelegate.swift */,
-				6014B5691F3A92EE00AACAEA /* ViewControllerOne.swift */,
 				6014B56B1F3A92EE00AACAEA /* Main.storyboard */,
 				6014B56E1F3A92EE00AACAEA /* Assets.xcassets */,
 				6014B5701F3A92EE00AACAEA /* LaunchScreen.storyboard */,
 				6014B5731F3A92EE00AACAEA /* Info.plist */,
 				6014B5951F3AA79A00AACAEA /* ViewControllerMain.swift */,
-				60FEA2AC1F3D39F100ED4D44 /* VC_roshambo.swift */,
-				608491811F408FF00082C013 /* VC_roshambo_result.swift */,
 			);
 			path = Area51;
 			sourceTree = "<group>";
@@ -132,6 +141,28 @@
 				6014B5891F3A92EE00AACAEA /* Info.plist */,
 			);
 			path = Area51UITests;
+			sourceTree = "<group>";
+		};
+		608491831F41FD2A0082C013 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				6084918D1F427E900082C013 /* VC_Meme.swift */,
+				6014B5691F3A92EE00AACAEA /* ViewControllerOne.swift */,
+				60FEA2AC1F3D39F100ED4D44 /* VC_roshambo.swift */,
+				608491811F408FF00082C013 /* VC_roshambo_result.swift */,
+				608491841F41FDB40082C013 /* VC_TextDelegate.swift */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		608491861F421ACB0082C013 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				608491871F421AFD0082C013 /* RandomColorTextFieldDelegate.swift */,
+				608491891F42303D0082C013 /* ZipCodeTextDelegate.swift */,
+				6084918B1F4230540082C013 /* CashTextFieldDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				608491851F41FDB40082C013 /* VC_TextDelegate.swift in Sources */,
+				608491881F421AFD0082C013 /* RandomColorTextFieldDelegate.swift in Sources */,
+				6084918A1F42303D0082C013 /* ZipCodeTextDelegate.swift in Sources */,
 				6014B5961F3AA79A00AACAEA /* ViewControllerMain.swift in Sources */,
 				60FEA2AD1F3D39F100ED4D44 /* VC_roshambo.swift in Sources */,
 				6014B56A1F3A92EE00AACAEA /* ViewControllerOne.swift in Sources */,
 				6014B5681F3A92EE00AACAEA /* AppDelegate.swift in Sources */,
+				6084918C1F4230540082C013 /* CashTextFieldDelegate.swift in Sources */,
+				6084918E1F427E900082C013 /* VC_Meme.swift in Sources */,
 				608491821F408FF00082C013 /* VC_roshambo_result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
