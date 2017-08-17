@@ -11,6 +11,7 @@ import UIKit
 class ViewControllerMain: UIViewController {
     
     
+    
     @IBAction func pickImageView(){
         let nextController = UIImagePickerController()
         self.present(nextController, animated:true, completion:nil)
@@ -40,8 +41,11 @@ class ViewControllerMain: UIViewController {
 //    }
 
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
        
     }
     
