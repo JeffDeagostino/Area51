@@ -24,7 +24,7 @@ UINavigationControllerDelegate {
     
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: [UIColor.black],
-        NSForegroundColorAttributeName: [UIColor.white],
+        NSForegroundColorAttributeName: [UIColor.green],
         NSStrokeWidthAttributeName : -3.0,
         NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 10)!
     ]
@@ -37,10 +37,11 @@ UINavigationControllerDelegate {
         //self.topTextField.delegate = textDelegate
         //self.bottomTextField.delegate = textDelegate
         
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .center;
         bottomTextField.textAlignment = .center;
-        //topTextField.defaultTextAttributes = memeTextAttributes
-        //bottomTextField.defaultTextAttributes = memeTextAttributes
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
