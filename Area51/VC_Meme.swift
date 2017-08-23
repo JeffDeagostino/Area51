@@ -14,13 +14,17 @@ class VC_Meme: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
     @IBOutlet weak var SelectedImageView: UIImageView!
-    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var cameraButton: UIToolbar!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
     // Text Filed Delegate objects
     let textDelegate = MemeTextDelegate()
     
+    // test to try and hide toolbar
+    @IBAction func save(_ sender: Any) {
+        navigationController?.setToolbarHidden(true, animated: false)
+    }
     
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: [UIColor.black],
@@ -45,11 +49,12 @@ UINavigationControllerDelegate {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        
-        subscribeToKeyboardNotifications()
+        //cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+        
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         
@@ -103,6 +108,7 @@ UINavigationControllerDelegate {
     func keyboardWillShow(_ notification:Notification) {
         
         view.frame.origin.y = 0 - getKeyboardHeight(notification)
+        
     }
     
     func keyboardWillHide(_ notification:Notification) {
@@ -143,5 +149,8 @@ UINavigationControllerDelegate {
         return true;
         
     }
+    
+    // create and save meme object
+    
     
 }

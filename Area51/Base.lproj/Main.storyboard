@@ -215,103 +215,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDX-bL-bGS">
-                                <rect key="frame" x="0.0" y="630.5" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem title="Pick" width="59.5" id="hxq-5O-p0S">
-                                        <connections>
-                                            <action selector="pick:" destination="Qqi-Zl-2Vu" id="pXg-cy-rFg"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" id="N9h-nw-P63">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kxt-3l-yhF">
-                                            <rect key="frame" x="86" y="7" width="79" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Album"/>
-                                            <connections>
-                                                <action selector="pickAnImageFromAlbum:" destination="Qqi-Zl-2Vu" eventType="touchUpInside" id="BHq-Lk-i3c"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" id="xCT-SA-NXD">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="cameraButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pel-WT-Ynb" userLabel="cameraButton">
-                                            <rect key="frame" x="175" y="7" width="82" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Camera"/>
-                                            <connections>
-                                                <action selector="pickAnImageFromCamera:" destination="Qqi-Zl-2Vu" eventType="touchUpInside" id="KAL-OQ-hzw"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BAo-fj-72s">
-                                <rect key="frame" x="0.0" y="106.5" width="375" height="454"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="454" id="aQQ-R1-g7e"/>
-                                </constraints>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3z-88-cDO">
-                                <rect key="frame" x="0.0" y="15.5" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="ImageMaker" id="PLT-Nj-h3G">
-                                        <barButtonItem key="rightBarButtonItem" id="dPC-xv-PNe">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vZj-in-v3b">
-                                                <rect key="frame" x="313" y="-7" width="46" height="58"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Back"/>
-                                                <connections>
-                                                    <segue destination="v0w-6D-Gwl" kind="show" id="hdI-nU-v8w"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text(TOP)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wpz-Ec-slc">
-                                <rect key="frame" x="27" y="106" width="321" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pay-jh-aCz">
-                                <rect key="frame" x="27" y="530" width="321" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="PCn-Ij-M9M">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3z-88-cDO">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <items>
+                                            <navigationItem title="Meme Maker" id="PLT-Nj-h3G">
+                                                <barButtonItem key="rightBarButtonItem" id="dPC-xv-PNe">
+                                                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vZj-in-v3b">
+                                                        <rect key="frame" x="281" y="-7" width="46" height="58"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Back"/>
+                                                        <connections>
+                                                            <segue destination="v0w-6D-Gwl" kind="show" id="hdI-nU-v8w"/>
+                                                        </connections>
+                                                    </button>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YUV-Pv-qMa">
+                                        <rect key="frame" x="0.0" y="44" width="343" height="559"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hDy-MT-jmE">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="559"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eq7-cn-Lb3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text(TOP)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wpz-Ec-slc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BAo-fj-72s">
+                                                        <rect key="frame" x="0.0" y="30" width="343" height="499"/>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnt-7d-A9i">
+                                                        <rect key="frame" x="0.0" y="529" width="343" height="30"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pay-jh-aCz">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="hDy-MT-jmE" firstAttribute="centerX" secondItem="YUV-Pv-qMa" secondAttribute="centerX" id="2NT-u1-4u2"/>
+                                            <constraint firstItem="hDy-MT-jmE" firstAttribute="centerY" secondItem="YUV-Pv-qMa" secondAttribute="centerY" id="bgq-82-f7T"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="center" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kgb-mB-cSJ">
+                                        <rect key="frame" x="0.0" y="603" width="343" height="44"/>
+                                        <subviews>
+                                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="zDX-bL-bGS" userLabel="ToolBar">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                <items>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="l0f-yZ-an3"/>
+                                                    <barButtonItem systemItem="edit" id="hxq-5O-p0S">
+                                                        <connections>
+                                                            <action selector="pick:" destination="Qqi-Zl-2Vu" id="pXg-cy-rFg"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ia2-7e-K9w"/>
+                                                    <barButtonItem style="plain" systemItem="search" id="N9h-nw-P63"/>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yXC-Oz-k5M"/>
+                                                    <barButtonItem style="plain" systemItem="camera" id="xCT-SA-NXD"/>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KQT-3R-wZV"/>
+                                                    <barButtonItem style="plain" systemItem="action" id="MBt-Ip-lpd">
+                                                        <connections>
+                                                            <action selector="save:" destination="Qqi-Zl-2Vu" id="7I6-Hg-Foh"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EuU-Py-mFi"/>
+                                                </items>
+                                            </toolbar>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="leading" secondItem="sMa-jh-g2h" secondAttribute="leading" id="7RD-R4-fKB"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="top" secondItem="wpz-Ec-slc" secondAttribute="top" id="7lo-Fs-l51"/>
-                            <constraint firstItem="pay-jh-aCz" firstAttribute="centerX" secondItem="sMa-jh-g2h" secondAttribute="centerX" id="8zI-97-V18"/>
-                            <constraint firstItem="3Z8-PI-JKU" firstAttribute="top" secondItem="pay-jh-aCz" secondAttribute="bottom" constant="107" id="BWz-bh-cAL"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="trailing" secondItem="N3z-88-cDO" secondAttribute="trailing" id="CFc-Gb-tyk"/>
-                            <constraint firstItem="wpz-Ec-slc" firstAttribute="trailing" secondItem="pay-jh-aCz" secondAttribute="trailing" id="Ehf-pP-qeY"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="centerX" secondItem="sMa-jh-g2h" secondAttribute="centerX" id="IeX-O3-WjE"/>
-                            <constraint firstItem="wpz-Ec-slc" firstAttribute="leading" secondItem="sMa-jh-g2h" secondAttribute="leadingMargin" constant="11" id="LYU-Gb-cvJ"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="top" secondItem="N3z-88-cDO" secondAttribute="bottom" constant="47" id="MnJ-zA-MYs"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="leading" secondItem="zDX-bL-bGS" secondAttribute="leading" id="P1M-pM-YDs"/>
-                            <constraint firstItem="wpz-Ec-slc" firstAttribute="centerX" secondItem="sMa-jh-g2h" secondAttribute="centerX" id="Q1x-sr-Skz"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="bottom" secondItem="pay-jh-aCz" secondAttribute="bottom" id="Q84-c9-73a"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="leading" secondItem="N3z-88-cDO" secondAttribute="leading" id="UX0-Uu-CQ4"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="centerY" secondItem="sMa-jh-g2h" secondAttribute="centerY" id="Y2r-8S-ujJ"/>
-                            <constraint firstItem="zDX-bL-bGS" firstAttribute="top" secondItem="BAo-fj-72s" secondAttribute="bottom" constant="70" id="ZWA-O4-f4m"/>
-                            <constraint firstItem="BAo-fj-72s" firstAttribute="trailing" secondItem="zDX-bL-bGS" secondAttribute="trailing" id="mmM-js-wml"/>
-                            <constraint firstItem="wpz-Ec-slc" firstAttribute="leading" secondItem="pay-jh-aCz" secondAttribute="leading" id="u6O-Bi-cng"/>
+                            <constraint firstItem="PCn-Ij-M9M" firstAttribute="top" secondItem="tkx-km-o9T" secondAttribute="bottom" id="5kD-bb-7zh"/>
+                            <constraint firstItem="3Z8-PI-JKU" firstAttribute="top" secondItem="PCn-Ij-M9M" secondAttribute="bottom" id="DiE-a1-Zdb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PCn-Ij-M9M" secondAttribute="trailing" id="iTX-f3-vfl"/>
+                            <constraint firstItem="PCn-Ij-M9M" firstAttribute="leading" secondItem="sMa-jh-g2h" secondAttribute="leadingMargin" id="xEV-iW-eE0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="SelectedImageView" destination="BAo-fj-72s" id="YjP-J1-ujm"/>
                         <outlet property="bottomTextField" destination="pay-jh-aCz" id="g01-e9-SKA"/>
-                        <outlet property="cameraButton" destination="pel-WT-Ynb" id="WX4-sT-lzf"/>
+                        <outlet property="cameraButton" destination="zDX-bL-bGS" id="4JS-CF-lyu"/>
                         <outlet property="topTextField" destination="wpz-Ec-slc" id="XFo-X5-zaf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFv-ID-eXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336.80000000000001" y="715.59220389805103"/>
+            <point key="canvasLocation" x="335.98200899550227" y="714.39999999999998"/>
         </scene>
         <!--roshambo result-->
         <scene sceneID="Yvz-uY-aPt">
